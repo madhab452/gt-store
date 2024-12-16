@@ -1,0 +1,24 @@
+syntax = "proto3";
+package pstore;
+
+import "buf/validate/validate.proto";
+
+option go_package = "github.com/madhab452/gt-store/pstore;pstore";
+
+service Store {
+  rpc Get (GetRequest) returns (GetReply) {}
+  rpc Put (PutRequest) returns (GetReply) {} // todo: return an empty response
+}
+
+message GetRequest {
+	string key = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message PutRequest {
+	string key = 1 [(buf.validate.field).string.min_len = 1];
+	string value = 2 [(buf.validate.field).string.min_len = 1];
+}
+
+message GetReply {
+	string value = 2;
+}
