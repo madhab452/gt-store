@@ -1,6 +1,6 @@
 module github.com/madhab452/gt-store
 
-go 1.23.3
+go 1.23
 
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.35.2-20241127180247-a33202765966.1
